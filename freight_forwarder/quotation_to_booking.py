@@ -6,10 +6,13 @@ def create_booking_from_quotation(quotation_name):
 
     quotation = frappe.get_doc("Freight Quotation", quotation_name)
 
-    # Prevent duplicate booking
-    if getattr(quotation, "booking_created", 0):
-        frappe.throw("Booking already created for this Quotation")
-
+    # Prevent duplicate — only block if active booking exists
+    existing = frappe.db.exists("Booking", {
+        "quotation": quotation_name,
+        "docstatus": ["!=", 2]
+    })
+    if existing:
+        frappe.throw(f"An active Booking <b>{existing}</b> already exists for this Quotation.")
     # -------------------------------
     # ROUTE VALIDATION
     # -------------------------------
