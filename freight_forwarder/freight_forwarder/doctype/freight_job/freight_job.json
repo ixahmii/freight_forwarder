@@ -1,0 +1,350 @@
+{
+ "actions": [],
+ "autoname": "FJ-.YYYY.-.#####",
+ "creation": "2026-01-24 11:37:49.587955",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_alsv",
+  "booking",
+  "quotation",
+  "customer",
+  "sales_person",
+  "freight_job_document_checklist",
+  "freight_job_milestone",
+  "custom_clearance",
+  "section_break_ieqo",
+  "job_number",
+  "company",
+  "branch",
+  "job_type",
+  "status",
+  "amended_from",
+  "job_container",
+  "job_container_detail",
+  "job_cost_sheet_created",
+  "sales_invoice_created",
+  "section_break_nyai",
+  "service_type",
+  "mode",
+  "origin",
+  "destination",
+  "weight",
+  "volume",
+  "no_of_packages",
+  "cargo_description",
+  "section_break_rocf",
+  "etd",
+  "eta",
+  "actual_departure",
+  "actual_arrival",
+  "profitability_section",
+  "total_revenue",
+  "total_cost",
+  "gross_profit",
+  "gp_",
+  "freight_job_revenue",
+  "freight_job_expense",
+  "control_section",
+  "assigned_operator",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_ieqo",
+   "fieldtype": "Section Break",
+   "label": "Identification"
+  },
+  {
+   "fieldname": "job_number",
+   "fieldtype": "Read Only",
+   "label": "Job Number"
+  },
+  {
+   "default": "Freight",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Branch",
+   "options": "Branch"
+  },
+  {
+   "fieldname": "job_type",
+   "fieldtype": "Select",
+   "label": "Job Type",
+   "options": "Import\nExport\nCross Trade"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nActive\nCompleted\nClosed\nCancelled"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Freight Job",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "job_container",
+   "fieldtype": "Table",
+   "label": "Job Container",
+   "options": "Job Container"
+  },
+  {
+   "default": "0",
+   "fieldname": "job_cost_sheet_created",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Job Cost Sheet Created"
+  },
+  {
+   "default": "0",
+   "fieldname": "sales_invoice_created",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Sales Invoice Created"
+  },
+  {
+   "fieldname": "section_break_alsv",
+   "fieldtype": "Section Break",
+   "label": "Commercial References"
+  },
+  {
+   "fetch_from": "booking.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "booking.quotation",
+   "fieldname": "quotation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Quotation",
+   "options": "Freight Quotation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "booking",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Booking",
+   "options": "Booking",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_person",
+   "fieldtype": "Link",
+   "label": "Sales Person",
+   "options": "Sales Person"
+  },
+  {
+   "fieldname": "section_break_nyai",
+   "fieldtype": "Section Break",
+   "label": "Shipment Details"
+  },
+  {
+   "fetch_from": "quotation.service_type",
+   "fieldname": "service_type",
+   "fieldtype": "Select",
+   "label": "Service Type",
+   "options": "Air\nSea\nRoad\nMultiModal"
+  },
+  {
+   "fieldname": "mode",
+   "fieldtype": "Select",
+   "label": "Mode",
+   "options": "FCL\nLCL\nAir"
+  },
+  {
+   "fetch_from": "quotation.origin",
+   "fieldname": "origin",
+   "fieldtype": "Link",
+   "label": "Origin",
+   "options": "Location"
+  },
+  {
+   "fetch_from": "quotation.destination",
+   "fieldname": "destination",
+   "fieldtype": "Link",
+   "label": "Destination",
+   "options": "Location"
+  },
+  {
+   "fetch_from": "quotation.cargo_description",
+   "fieldname": "cargo_description",
+   "fieldtype": "Small Text",
+   "label": "Cargo Description"
+  },
+  {
+   "fetch_from": "quotation.weight",
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fetch_from": "quotation.volume",
+   "fieldname": "volume",
+   "fieldtype": "Float",
+   "label": "Volume"
+  },
+  {
+   "fieldname": "no_of_packages",
+   "fieldtype": "Int",
+   "label": "No. Of Packages"
+  },
+  {
+   "fieldname": "section_break_rocf",
+   "fieldtype": "Section Break",
+   "label": "Schedule"
+  },
+  {
+   "fetch_from": "booking.etd",
+   "fieldname": "etd",
+   "fieldtype": "Date",
+   "label": "ETD"
+  },
+  {
+   "fetch_from": "booking.eta",
+   "fieldname": "eta",
+   "fieldtype": "Date",
+   "label": "ETA"
+  },
+  {
+   "fieldname": "actual_departure",
+   "fieldtype": "Date",
+   "label": "Actual Departure"
+  },
+  {
+   "fieldname": "actual_arrival",
+   "fieldtype": "Date",
+   "label": "Actual Arrival"
+  },
+  {
+   "fieldname": "profitability_section",
+   "fieldtype": "Section Break",
+   "label": "Profitability",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_revenue",
+   "fieldtype": "Currency",
+   "label": "Total Revenue"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Total Cost"
+  },
+  {
+   "fieldname": "gross_profit",
+   "fieldtype": "Currency",
+   "label": "Gross Profit"
+  },
+  {
+   "fieldname": "gp_",
+   "fieldtype": "Percent",
+   "label": "GP %"
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Control"
+  },
+  {
+   "fieldname": "assigned_operator",
+   "fieldtype": "Link",
+   "label": "Assigned operator",
+   "options": "User"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Text Editor",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "freight_job_revenue",
+   "fieldtype": "Table",
+   "label": "Freight Job Revenue",
+   "options": "Freight Job Revenue"
+  },
+  {
+   "fieldname": "freight_job_expense",
+   "fieldtype": "Table",
+   "label": "Freight Job Expense",
+   "options": "Freight Job Expense"
+  },
+  {
+   "fieldname": "freight_job_document_checklist",
+   "fieldtype": "Table",
+   "label": "Freight Job Document Checklist",
+   "options": "Freight Job Document Checklist"
+  },
+  {
+   "fieldname": "freight_job_milestone",
+   "fieldtype": "Table",
+   "label": "Freight Job Milestone",
+   "options": "Freight Job Milestone"
+  },
+  {
+   "fieldname": "job_container_detail",
+   "fieldtype": "Table",
+   "label": "Job Container Detail",
+   "options": "Job Container Detail"
+  },
+  {
+   "fieldname": "custom_clearance",
+   "fieldtype": "Table",
+   "label": "Custom Clearance",
+   "options": "Custom Clearance"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-25 02:32:18.612343",
+ "modified_by": "Administrator",
+ "module": "Freight Forwarder",
+ "name": "Freight Job",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

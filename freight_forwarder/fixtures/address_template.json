@@ -1,0 +1,65 @@
+[
+ {
+  "country": "United Kingdom",
+  "docstatus": 0,
+  "doctype": "Address Template",
+  "is_default": 1,
+  "modified": "2026-02-23 09:28:17.385790",
+  "name": "United Kingdom",
+  "template": "{{ address_line1 }}<br>\n{% if address_line2 %}{{ address_line2 }}<br>{% endif -%}\n{{ city }}<br>\n{% if state %}{{ state }}<br>{% endif -%}\n{% if pincode %}{{ pincode }}<br>{% endif -%}\n{{ country }}<br>\n<br>\n{% if phone %}{{ _(\"Phone\") }}: {{ phone }}<br>{% endif -%}\n{% if fax %}{{ _(\"Fax\") }}: {{ fax }}<br>{% endif -%}\n{% if email_id %}{{ _(\"Email\") }}: {{ email_id }}<br>{% endif -%}\n"
+ },
+ {
+  "country": "Sweden",
+  "docstatus": 0,
+  "doctype": "Address Template",
+  "is_default": 0,
+  "modified": "2026-02-23 09:28:18.593818",
+  "name": "Sweden",
+  "template": "{{ address_line1 }}<br>\n{% if address_line2 %}{{ address_line2 }}<br>{% endif -%}\n{{ pincode }} {{ city | upper }}<br>\n{{ country | upper }}"
+ },
+ {
+  "country": "Luxembourg",
+  "docstatus": 0,
+  "doctype": "Address Template",
+  "is_default": 0,
+  "modified": "2026-02-23 09:28:18.597958",
+  "name": "Luxembourg",
+  "template": "{% if address_line1 %}{{ address_line1 }}<br>{% endif -%}\n{% if address_line2 %}{{ address_line2 }}<br>{% endif -%}\n{% if pincode %}L-{{ pincode }}{% endif -%}{% if city %} {{ city }}{% endif %}<br>\n{% if country %}{{ country | upper }}{% endif %}\n"
+ },
+ {
+  "country": "Germany",
+  "docstatus": 0,
+  "doctype": "Address Template",
+  "is_default": 0,
+  "modified": "2026-02-23 09:28:18.602375",
+  "name": "Germany",
+  "template": "{{ address_line1 }}<br>\n{% if address_line2 %}{{ address_line2 }}<br>{% endif -%}\n{{ pincode }} {{ city | upper }}<br>\n{{ country | upper }}\n"
+ },
+ {
+  "country": "United States",
+  "docstatus": 0,
+  "doctype": "Address Template",
+  "is_default": 0,
+  "modified": "2026-02-23 09:28:18.606498",
+  "name": "United States",
+  "template": "{{ address_line1 }}<br>\n{% if address_line2 %}{{ address_line2 }}<br>{% endif -%}\n{{ city }}, {% if state %}{{ state }}{% endif -%}{% if pincode %} {{ pincode }}{% endif -%}<br>\n{% if country != \"United States\" %}{{ country }}{% endif -%}\n"
+ },
+ {
+  "country": "Taiwan",
+  "docstatus": 0,
+  "doctype": "Address Template",
+  "is_default": 0,
+  "modified": "2026-02-23 09:28:18.613470",
+  "name": "Taiwan",
+  "template": "{{ country }}<br>{% if pincode %}{{ pincode }}<br>{% endif -%}{{ county }}{{ city }}{{ address_line1 }}{% if address_line2 %}{{ address_line2 }}{% endif -%}\n{% if phone %}<br>Phone: {{ phone }}{% endif -%}\n{% if fax %}<br>Fax: {{ fax }}{% endif -%}\n{% if email_id %}<br>Email: {{ email_id }}{% endif -%}\n"
+ },
+ {
+  "country": "Switzerland",
+  "docstatus": 0,
+  "doctype": "Address Template",
+  "is_default": 0,
+  "modified": "2026-02-23 09:28:18.624428",
+  "name": "Switzerland",
+  "template": "{{ address_line1 }}<br>\n{% if address_line2 %}{{ address_line2 }}<br>{% endif -%}\n{{ pincode }} {{ city | upper }}<br>\n{{ country | upper }}\n"
+ }
+]

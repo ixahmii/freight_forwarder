@@ -5,6 +5,46 @@ app_description = "Software for Freight Forwarder"
 app_email = "abc@gmail.com"
 app_license = "mit"
 
+# -----------------------------
+# 1️⃣ Merge all doc_events into one dictionary
+# -----------------------------
+doc_events = {
+    "Job Cost Sheet": {
+        "validate": "freight_forwarder.job_cost_sheet.validate",
+        "on_submit": "freight_forwarder.job_cost_sheet.on_submit",
+        "on_cancel": "freight_forwarder.job_cost_sheet.on_cancel"
+    },
+    "Sales Invoice": {
+        "on_submit": "freight_forwarder.freight_forwarder.doctype.freight_job.freight_job.update_profitability_from_invoice",
+        "on_cancel": "freight_forwarder.freight_forwarder.doctype.freight_job.freight_job.update_profitability_from_invoice"
+    },
+    "Purchase Invoice": {
+        "on_submit": "freight_forwarder.freight_forwarder.doctype.freight_job.freight_job.update_profitability_from_invoice",
+        "on_cancel": "freight_forwarder.freight_forwarder.doctype.freight_job.freight_job.update_profitability_from_invoice"
+    }
+}
+
+# -----------------------------
+# 2️⃣ Fixtures
+# -----------------------------
+fixtures = [
+    # Workspace
+    {"dt": "Workspace", "filters": [{"title": "Freight Forwarder"}]},
+    
+    # Customization
+    "Custom Field",
+    "Property Setter",
+    "Client Script",
+    
+    # Print & Templates
+    "Print Format",
+    "Letter Head",
+    "Address Template",
+    "Terms and Conditions",
+    "Email Template",
+    "Document Naming Rule",
+]
+
 # Apps
 # ------------------
 
@@ -43,7 +83,7 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-# doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {"Purchase Invoice" : "public/js/purchase_invoice.js"}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}

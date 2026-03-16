@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-25 01:59:02.019532",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "milestone_name",
+  "status",
+  "date_achieved",
+  "responsible_user",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "milestone_name",
+   "fieldtype": "Select",
+   "label": "Milestone Name",
+   "options": "Booked\nCargo Received\nCustoms Cleared\nOn Board\nArrived\nDelivered\nClosed"
+  },
+  {
+   "default": "0",
+   "fieldname": "status",
+   "fieldtype": "Check",
+   "label": "Status",
+   "options": "Completed / Pending"
+  },
+  {
+   "fieldname": "date_achieved",
+   "fieldtype": "Date",
+   "label": "Date Achieved"
+  },
+  {
+   "fieldname": "responsible_user",
+   "fieldtype": "Link",
+   "label": "Responsible User",
+   "options": "User"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-02-25 02:03:07.875236",
+ "modified_by": "Administrator",
+ "module": "Freight Forwarder",
+ "name": "Freight Job Milestone",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

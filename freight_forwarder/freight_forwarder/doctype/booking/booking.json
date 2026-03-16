@@ -1,0 +1,189 @@
+{
+ "actions": [],
+ "autoname": "FB-.YYYY.-.#####",
+ "creation": "2026-01-23 22:48:53.596568",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_hs3s",
+  "freight_job_created",
+  "quotation",
+  "customer",
+  "booking_date",
+  "booking_name",
+  "shipment_type",
+  "service_type",
+  "origin",
+  "destination",
+  "weight",
+  "volume",
+  "incoterms",
+  "etd",
+  "eta",
+  "status",
+  "booking_container_detail",
+  "booking_document",
+  "cargo_description",
+  "remarks",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_hs3s",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "freight_job_created",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Freight Job Created"
+  },
+  {
+   "fieldname": "quotation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Quotation",
+   "options": "Freight Quotation"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fetch_from": "quotation.shipment_type",
+   "fieldname": "shipment_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Shipment Type",
+   "options": "FCL\nLCL\nAir\nBreakbulk"
+  },
+  {
+   "fieldname": "origin",
+   "fieldtype": "Link",
+   "label": "Origin",
+   "options": "Location"
+  },
+  {
+   "fieldname": "destination",
+   "fieldtype": "Link",
+   "label": "Destination",
+   "options": "Location"
+  },
+  {
+   "fieldname": "cargo_description",
+   "fieldtype": "Small Text",
+   "label": "Cargo Description"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "volume",
+   "fieldtype": "Float",
+   "label": "Volume (CBM)"
+  },
+  {
+   "fetch_from": "quotation.incoterms",
+   "fieldname": "incoterms",
+   "fieldtype": "Select",
+   "label": "Incoterms",
+   "options": "EXW\nFCA\nCPT\nCIP\nDAP\nDPU\nDDP\nFAS\nFOB\nCFR\nCIF"
+  },
+  {
+   "fieldname": "etd",
+   "fieldtype": "Date",
+   "label": "ETD"
+  },
+  {
+   "fieldname": "eta",
+   "fieldtype": "Date",
+   "label": "ETA"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Booking Status",
+   "options": "Draft\nConfirmed\nCancelled"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Booking",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "booking_date",
+   "fieldtype": "Date",
+   "label": "Booking Date"
+  },
+  {
+   "fieldname": "booking_name",
+   "fieldtype": "Data",
+   "label": "Booking Name"
+  },
+  {
+   "fieldname": "service_type",
+   "fieldtype": "Select",
+   "label": "Service Type",
+   "options": "Air\nSea\nRoad\nMultiModal"
+  },
+  {
+   "fieldname": "booking_container_detail",
+   "fieldtype": "Table",
+   "label": "Booking Container Detail",
+   "options": "Booking Container Detail"
+  },
+  {
+   "fieldname": "booking_document",
+   "fieldtype": "Table",
+   "label": "Booking Document",
+   "options": "Booking Document"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-02-25 05:50:41.305088",
+ "modified_by": "Administrator",
+ "module": "Freight Forwarder",
+ "name": "Booking",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
